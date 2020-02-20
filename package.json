@@ -1,0 +1,23 @@
+{
+  "name": "rollup-plugin-koa-serve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-proxy": "^1.0.0-alpha.3",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.1",
+    "@types/koa-proxy": "^1.0.1",
+    "@types/koa-static": "^4.0.1",
+    "typescript": "^3.7.5"
+  }
+}
