@@ -22,7 +22,11 @@ function default_1(opt) {
         Object.assign(ctx.request.header, opt.headers);
         return next();
     });
-    app.use(koa_static_1.default(opt.static));
+    app.use(koa_static_1.default(opt.static, {
+        setHeaders(res) {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+        }
+    }));
     app.use((ctx, next) => __awaiter(this, void 0, void 0, function* () {
         /** pass if static middleware could handle */
         yield next();

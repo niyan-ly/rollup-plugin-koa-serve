@@ -29,7 +29,11 @@ export default function(opt: IOptions) {
 
     return next();
   });
-  app.use(koaStatic(opt.static));
+  app.use(koaStatic(opt.static, {
+    setHeaders(res) {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+    }
+  }));
   app.use(async (ctx, next) => {
     /** pass if static middleware could handle */
     await next();
