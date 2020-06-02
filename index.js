@@ -30,6 +30,7 @@ function default_1(opt) {
     app.use((ctx, next) => __awaiter(this, void 0, void 0, function* () {
         /** pass if static middleware could handle */
         yield next();
+        ctx.res.setHeader("Access-Control-Allow-Origin", "*");
         console.log(`[koa serve]${ctx.method} ${ctx.originalUrl}`);
         for (const key in opt.proxy) {
             if (ctx.path.includes(key)) {

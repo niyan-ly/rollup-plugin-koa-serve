@@ -37,6 +37,7 @@ export default function(opt: IOptions) {
   app.use(async (ctx, next) => {
     /** pass if static middleware could handle */
     await next();
+    ctx.res.setHeader("Access-Control-Allow-Origin", "*");
 
     console.log(`[koa serve]${ctx.method} ${ctx.originalUrl}`)
     for (const key in opt.proxy) {
